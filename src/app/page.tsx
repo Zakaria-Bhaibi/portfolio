@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import Image from 'next/image'; 
-// Corrected: Removed unused Twitter and Instagram imports
+// Corrected: Removed unused icon imports
 import { Github, Mail, Code, PenTool, Search, Server, Database, Layers, ArrowUpRight, Download, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button'; 
 import { gsap } from 'gsap';
