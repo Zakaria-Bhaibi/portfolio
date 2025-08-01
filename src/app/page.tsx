@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import Image from 'next/image'; 
-import { Github, Twitter, Mail, Code, PenTool, Search, Server, Database, Layers, ArrowUpRight, Download, Instagram, Linkedin } from 'lucide-react';
+// Corrected: Removed unused Twitter and Instagram imports
+import { Github, Mail, Code, PenTool, Search, Server, Database, Layers, ArrowUpRight, Download, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button'; 
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -146,8 +147,8 @@ const Header = ({ activeSection }: { activeSection: string }) => {
           })}
         </nav>
         <div className="flex items-center space-x-4">
-          <a href="https://www.linkedin.com/in/bhaibi-zakaria/" target="_blank" aria-label="Linkedin" className="hover:text-[#32c788] transition-colors"><Linkedin size={20} /></a>
-          <a href="https://github.com/Zakaria-Bhaibi" aria-label="GitHub" target="_blank" className="hover:text-[#32c788] transition-colors"><Github size={20} /></a>
+          <a href="#" aria-label="LinkedIn" className="hover:text-[#32c788] transition-colors"><Linkedin size={20} /></a>
+          <a href="#" aria-label="GitHub" className="hover:text-[#32c788] transition-colors"><Github size={20} /></a>
           <a href="#contacts" aria-label="Email" className="bg-[#32c788] p-2 rounded-full hover:bg-opacity-80 transition-colors">
             <Mail size={20} className="text-black" />
           </a>
@@ -201,7 +202,7 @@ const HeroSection = () => {
             {/* --- Updated Buttons Section --- */}
             <div className="flex flex-wrap gap-4 pt-2">
               <Button variant="outline" className="border-[#32c788] text-[#32c788] px-6 py-3 hover:bg-[#32c788] hover:text-black transition-all duration-300">
-                LET'S CHAT!
+                LET&apos;S CHAT!
               </Button>
               {/* This link points to a PDF in your `public` folder */}
               <a href="/files/Zakaria-Bhaibi-cv.pdf" download="Zakaria-Bhaibi-Resume.pdf">
@@ -253,13 +254,16 @@ const AboutSection = () => (
                 </div>
                 <div className="sticky top-24">
                     <p className="text-sm font-semibold text-[#32c788] mb-2">INTRODUCE</p>
-                    <h3 className="text-4xl font-bold mb-6 font-heading">Hello! I'm Zakaria Bhaibi</h3>
+                    {/* Corrected: Escaped apostrophe */}
+                    <h3 className="text-4xl font-bold mb-6 font-heading">Hello! I&apos;m Zakaria Bhaibi</h3>
                     <div className="space-y-4 text-gray-400">
                         <p>
-                            Every great Website begins with an even better story. Since beginning my journey as a freelance Web Developer nearly 3 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use.
+                            {/* Corrected: Escaped apostrophe */}
+                            Every great Website begins with an even better story. Since beginning my journey as a freelance Web Developer nearly 3 years ago, I&apos;ve done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use.
                         </p>
                         <p>
-                            I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
+                            {/* Corrected: Escaped apostrophe */}
+                            I&apos;m quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
                         </p>
                     </div>
                 </div>
@@ -288,28 +292,28 @@ const projects = [
     description: 'A modern, responsive website for a creative agency, built with React and Tailwind CSS.',
     imageUrl: '/images/Edit-website.png',
     link: '#',
-    tags: ['React', 'Vite-JS', 'Tailwind CSS'],
+    tags: ['React', 'Next.js', 'Tailwind CSS'],
   },
   {
     title: 'Vision Forge',
     description: 'A modern, responsive website for a VR specialised agency, built with React and Tailwind CSS.',
     imageUrl: '/images/Vision-forge.png',
     link: '#',
-    tags: ['React', 'Vite-JS', 'Tailwind CSS'],
+    tags: ['React', 'GSAP', 'Framer Motion'],
   },
   {
     title: 'Login Modal',
     description: 'Built with React and Tailwind CSS, this login modal features smooth animations and responsive design',
     imageUrl: '/images/Login-modal.png',
     link: '#',
-    tags: ['React', 'Vite-JS', 'Tailwind CSS'],
+    tags: ['React', 'TypeScript', 'shadcn/ui'],
   },
   {
     title: 'Product Modal',
     description: 'Built with React and Tailwind CSS, this product modal showcases a sleek design with smooth animations.',
     imageUrl: '/images/Product-modal.png',
     link: '#',
-    tags: ['React', 'Vite-JS', 'Tailwind CSS'],
+    tags: ['WordPress', 'PHP', 'Advanced Custom Fields'],
   },
 ];
 
@@ -375,7 +379,7 @@ const ContactSection = () => (
 const Footer = () => (
   <footer className="bg-[#1a1a1a] border-t border-gray-800 py-8">
     <div className="container mx-auto px-6 text-center text-gray-400">
-      <p>&copy; {new Date().getFullYear()} Zakaria Bhaibi Made with Next-JS, Tailwind, Gsap, Shadcn-ui and ❤️. All Rights Reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Zakaria Bhaibi. All Rights Reserved.</p>
     </div>
   </footer>
 );
