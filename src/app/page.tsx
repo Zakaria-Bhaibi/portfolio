@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -15,12 +15,13 @@ export default function App() {
   const worksRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
 
-  const sectionRefs = {
+  // Corrected: Wrapped sectionRefs in useMemo to prevent re-creation on every render.
+  const sectionRefs = useMemo(() => ({
     home: homeRef,
     services: servicesRef,
     works: worksRef,
     contacts: contactsRef,
-  };
+  }), []);
 
   useEffect(() => {
     const handleScroll = () => {

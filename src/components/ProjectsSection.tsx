@@ -37,8 +37,7 @@ export default function ProjectsSection() {
     const pinRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Corrected: Use gsap.context for proper cleanup
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             const track = trackRef.current;
             if (!track) return;
 
@@ -58,7 +57,6 @@ export default function ProjectsSection() {
             });
         }, mainRef);
 
-        // This is the crucial cleanup function
         return () => ctx.revert();
     }, []);
 
